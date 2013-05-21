@@ -45,9 +45,9 @@ Then include the context processor in your settings:
         ...
         'contextlayers.context_processors.layer_tool',
     )
-    
 
-Making Your own Layers
+
+Making Your Own Layers
 ----------------------
 
 First you define a layer class.  You'll probably want to subclass
@@ -76,13 +76,12 @@ Next, sync your database:
 The layers won't be visible until you add support to your templates.
 For example:
 
-  {% for css in layers.theme %}
-    {{ css|safe }}
-  {% endfor %}
+    {% for css in layers.theme %}
+      {{ css|safe }}
+    {% endfor %}
 
 What you do with `layers.*` depends on what the layer provides to the
 context and how your templates should use it.
 
 Finally, define the layer records in the Django admin.  Take note of
 the help text for the dates and path values.
-
